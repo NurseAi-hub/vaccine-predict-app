@@ -70,8 +70,7 @@ To run this predictive analytics platform on your local machine, follow these st
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/vaccination-early-warning.git](https://github.com/your-username/vaccination-early-warning.git)
-cd vaccination-early-warning
+git clone (https://github.com/NurseAi-hub/vaccine-predict-app.git)
 ```
 
 2. Install Dependencies
