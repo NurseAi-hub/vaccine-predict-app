@@ -216,7 +216,7 @@ def run_global_2030_assessment(_model_pipeline, _df_master):
     future_predictions = []
 
     for country in all_countries:
-        country_data = _df_master[_df_master['iso3'] == country].iloc[0]
+        country_data = _df_master[_df_master['iso3'] == country].iloc[-1]
 
         future_input = pd.DataFrame({
             'Year': [2030],
