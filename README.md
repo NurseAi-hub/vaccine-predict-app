@@ -73,17 +73,18 @@ To run this predictive analytics platform on your local machine, follow these st
 git clone [https://github.com/your-username/vaccination-early-warning.git](https://github.com/your-username/vaccination-early-warning.git)
 cd vaccination-early-warning
 2. Install Dependencies
+```
 
 Ensure you have Python 3.9+ installed, then install the required data science dependencies:
-
+```
 pip install pandas numpy scikit-learn matplotlib seaborn shap streamlit
-
+```
 3. Launch the Application
 
 Run the Streamlit server from your terminal:
-
+```
 streamlit run app.py
-
+```
 🧰 Tech Stack Summary
 
 Frontend UI: Streamlit
