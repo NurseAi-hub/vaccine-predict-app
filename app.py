@@ -348,7 +348,7 @@ tab1, tab2, tab3 = st.tabs(["📉 Global Risk Distribution", "🧠 Global AI Dri
 with tab1:
     st.write("### 2030 Country Dropout Risk Allocation")
     
-    # Apply your excellent classification logic
+    # 1. تصنيف الدول بناءً على منطقك الممتاز (تم تعديل الكلمة لـ Watchlist مباشرة)
     results_2030['Category'] = results_2030['Predicted_DTP3'].apply(
         lambda x: 'Critical' if x < 50 else ('At Risk' if x < 70 else ('Watchlist' if x < 80 else 'Safe'))
     )
@@ -356,7 +356,7 @@ with tab1:
     df_filtered = results_2030[results_2030['Category'] != 'Safe']
     counts = df_filtered['Category'].value_counts().reindex(['Critical', 'At Risk', 'Watchlist']).fillna(0)
 
-    # Clean Streamlit-compatible Matplotlib Plotting
+    # 2. رسم المخطط البياني بأحجام خطوط واضحة واحترافية (Size 15)
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.barplot(
         x=counts.index, 
@@ -367,31 +367,29 @@ with tab1:
         ax=ax
     )
     
-    ax.set_title('Global Health Strategy: 2030 DTP3 Dropout Risk Assessment', fontsize=14, pad=15)
-    ax.set_ylabel('Number of Countries', fontsize=11)
-    ax.set_xlabel('Risk Category', fontsize=11)
+    ax.set_title('Global Health Strategy: 2030 DTP3 Dropout Risk Assessment', fontsize=16, pad=15)
+    ax.set_ylabel('Number of Countries', fontsize=15)
+    ax.set_xlabel('Risk Category', fontsize=15)
 
     for i, v in enumerate(counts.values):
-        ax.text(i, v + 0.2, str(int(v)), ha='center', fontsize=11, fontweight='bold')
+        ax.text(i, v + 0.2, str(int(v)), ha='center', fontsize=15, fontweight='bold')
         
     plt.tight_layout()
-    st.pyplot(fig) # Displays the plot cleanly on the Streamlit web layout
+    st.pyplot(fig) # عرض الرسم البياني بوضوح
     plt.close(fig)
 
+    # 3. تجهيز بيانات الجدول الموحد للـ 15 دولة فقط
     watchlist_df = results_2030[results_2030['Category'] != 'Safe'].copy()
-
-    # 2. Clean up the naming so 'watchlist pre-warning' matches your chart's 'Watchlist'
-    watchlist_df['Category'] = watchlist_df['Category'].replace('watchlist pre-warning', 'Watchlist')
-
-    # 3. Sort them from lowest to highest prediction score
+    
+    # ترتيب الدول من الأقل للأعلى في التنبؤ (تصاعدياً) لتسهيل القراءة
     watchlist_df = watchlist_df.sort_values(by='Predicted_DTP3', ascending=True)
 
-    # 4. Display the complete table beautifully in Streamlit
+    # 4. عرض الجدول الوحيد المكتمل والاحترافي في التطبيق
     st.write("### 📋 Global Risk Assessment: The 15 Watchlist Countries (2030)")
     st.dataframe(
         watchlist_df[['Country', 'Predicted_DTP3', 'Category']], 
-        hide_index=True,            # Removes backend index numbers (46, 133, 160)
-        use_container_width=True    # Stretches the table to fit the screen nicely
+        hide_index=True,            # إخفاء الأرقام العشوائية الجانبية
+        use_container_width=True    # تمديد الجدول ليملأ الشاشة بشكل أنيق
     )
 with tab2:
     st.write("### Global Feature Importance (What the AI Looks For)")
