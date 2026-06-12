@@ -30,13 +30,16 @@ The architecture follows a rigorous ETL (Extract, Transform, Load) and machine l
 
 
 
-## 1. Data Ingestion & Harmonization (The ETL Pipeline)
+### 1. Data Ingestion & Harmonization (The ETL Pipeline)
 * **Reshaping:** Implements a dynamic wide-to-long transformation of UNICEF time-series data using `pandas` melt operations, ensuring longitudinal data consistency.
 * **Feature Enrichment:** Executes systematic merges across DTP1, DTP3, and Gap datasets using `iso3` and `Year` keys. It enriches the master dataset with regional and economic metadata (`Region`, `Income_Group`).
 * **Normalization:** Converts categorical descriptors into numerical feature codes (`Region_Code`, `Subregion_code`) to optimize neural network training stability.
+
+
 ### 2. Predictive Modeling (The Neural Network)
 * Deploys a **Multi-Layer Perceptron (MLPRegressor)** architecture trained to capture highly complex, non-linear spatiotemporal relationships in healthcare data.
 * Extrapolates historical indicators into a reliable 2030 predictive vector for every recorded country.
+
 
 ### 3. Explainable AI (XAI) Pipeline
 * Implements a **SHAP (SHapley Additive exPlanations)** engine built on cooperative Game Theory.
