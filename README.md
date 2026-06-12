@@ -30,7 +30,7 @@ The architecture follows a rigorous ETL (Extract, Transform, Load) and machine l
 
 
 
-### 1. Data Ingestion & Harmonization (The ETL Pipeline)
+## 1. Data Ingestion & Harmonization (The ETL Pipeline)
 * **Reshaping:** Implements a dynamic wide-to-long transformation of UNICEF time-series data using `pandas` melt operations, ensuring longitudinal data consistency.
 * **Feature Enrichment:** Executes systematic merges across DTP1, DTP3, and Gap datasets using `iso3` and `Year` keys. It enriches the master dataset with regional and economic metadata (`Region`, `Income_Group`).
 * **Normalization:** Converts categorical descriptors into numerical feature codes (`Region_Code`, `Subregion_code`) to optimize neural network training stability.
