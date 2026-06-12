@@ -202,10 +202,14 @@ import pandas as pd
 # ==========================================
 st.set_page_config(page_title="Health AI - Vaccination Forecast", layout="wide")
 
-st.title("🌍 Early Warning System: Vaccination Coverage Predictor")
-st.write("Developed by: Health Data Scientist - Morocco 🇲🇦")
-st.write("This AI tool predicts DTP3 coverage to help identify countries at risk of vaccination gaps.")
+st.title("Early Warning System: Vaccination Coverage Predictor")
+st.subheader("Developed by: Health Data Scientist - Morocco 🇲🇦")
+st.markdown("""
+This AI tool predicts DTP3 coverage to help identify countries at risk of vaccination gaps.  
+This tool was built to assist global health initiatives in achieving the 2030 sustainability goals.
+""")
 
+st.markdown("---")
 # ==========================================
 # 2. CACHED GLOBAL RISK ANALYTICS (Runs Only Once!)
 # ==========================================
@@ -301,7 +305,7 @@ st.dataframe(results_2030.head(10), use_container_width=True)
 
 # Footer
 st.markdown("---")
-st.caption("This tool was built to assist global health initiatives in achieving the 2030 sustainability goals.")
+
 
 
 # ==========================================
