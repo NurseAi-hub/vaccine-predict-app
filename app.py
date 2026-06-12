@@ -202,7 +202,7 @@ import pandas as pd
 # ==========================================
 st.set_page_config(page_title="Health AI - Vaccination Forecast", layout="wide")
 
-st.title("Early Warning System: Vaccination Coverage Predictor")
+st.title("🌍 Early Warning System: Vaccination Coverage Predictor")
 st.subheader("Developed by: Health Data Scientist - Morocco 🇲🇦")
 st.markdown("""
 This AI tool predicts DTP3 coverage to help identify countries at risk of vaccination gaps.  
@@ -301,7 +301,7 @@ if st.sidebar.button("Run AI Prediction 🚀"):
 # 5. GLOBAL RISK WATCHLIST VIEW FOR JUDGES
 # ==========================================
 st.write("### 🚨 Global Risk Watchlist Preview (2030 Horizon)")
-st.dataframe(results_2030.head(10), use_container_width=True)
+st.dataframe(results_2030.head(15), use_container_width=True)
 
 # Footer
 st.markdown("---")
