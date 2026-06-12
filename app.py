@@ -265,7 +265,7 @@ print(f"Target year: 2027 | Baseline First dose coverage: 99%")
 print(f"🎯 Expected third dose coverage (DTP3): {sandbox_pred:.2f}%")
 
 print("\n📊 Health Risk Assessment Summary for 2030 (Console Verification):")
-print(results_2030.head(10)) 
+print(results_2030.head(15)) 
 
 # ==========================================
 # 4. INTERACTIVE USER PREDICTION LOGIC
@@ -352,7 +352,7 @@ tab1, tab2, tab3 = st.tabs(["📉 Global Risk Distribution", "🧠 Global AI Dri
 with tab1:
     st.write("### 2030 Country Dropout Risk Allocation")
     
-    # 1. تصنيف الدول بناءً على منطقك الممتاز (تم تعديل الكلمة لـ Watchlist مباشرة)
+    
     results_2030['Category'] = results_2030['Predicted_DTP3'].apply(
         lambda x: 'Critical' if x < 50 else ('At Risk' if x < 70 else ('Watchlist' if x < 80 else 'Safe'))
     )
@@ -360,7 +360,7 @@ with tab1:
     df_filtered = results_2030[results_2030['Category'] != 'Safe']
     counts = df_filtered['Category'].value_counts().reindex(['Critical', 'At Risk', 'Watchlist']).fillna(0)
 
-    # 2. رسم المخطط البياني بأحجام خطوط واضحة واحترافية (Size 15)
+     
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.barplot(
         x=counts.index, 
@@ -379,22 +379,9 @@ with tab1:
         ax.text(i, v + 0.2, str(int(v)), ha='center', fontsize=15, fontweight='bold')
         
     plt.tight_layout()
-    st.pyplot(fig) # عرض الرسم البياني بوضوح
+    st.pyplot(fig) 
     plt.close(fig)
-
-    # 3. تجهيز بيانات الجدول الموحد للـ 15 دولة فقط
-    watchlist_df = results_2030[results_2030['Category'] != 'Safe'].copy()
     
-    # ترتيب الدول من الأقل للأعلى في التنبؤ (تصاعدياً) لتسهيل القراءة
-    watchlist_df = watchlist_df.sort_values(by='Predicted_DTP3', ascending=True)
-
-    # 4. عرض الجدول الوحيد المكتمل والاحترافي في التطبيق
-    st.write("### 📋 Global Risk Assessment: The 15 Watchlist Countries (2030)")
-    st.dataframe(
-        watchlist_df[['Country', 'Predicted_DTP3', 'Category']], 
-        hide_index=True,            # إخفاء الأرقام العشوائية الجانبية
-        use_container_width=True    # تمديد الجدول ليملأ الشاشة بشكل أنيق
-    )
 with tab2:
     st.write("### Global Feature Importance (What the AI Looks For)")
     st.info("This chart displays how much weight the Neural Network assigns to each variable globally.")
