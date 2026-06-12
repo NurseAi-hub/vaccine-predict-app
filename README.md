@@ -1,5 +1,5 @@
 # 🌍 AI-Powered Early Warning System for Global Vaccination Coverage
-![Project  dashboard](Capture d’écran 2026-06-12 202903.png)
+![Project  dashboard](Capture_d’écran_2026-06-12_202903.png)
 
 ### Developed by: Health Data Scientist — Morocco 🇲🇦
 [![Streamlit App](https://static.streamlit.io/badge-svg.svg)](https://streamlit.io/)
