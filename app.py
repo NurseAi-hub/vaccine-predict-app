@@ -378,7 +378,21 @@ with tab1:
     st.pyplot(fig) # Displays the plot cleanly on the Streamlit web layout
     plt.close(fig)
 
+    watchlist_df = results_2030[results_2030['Category'] != 'Safe'].copy()
 
+    # 2. Clean up the naming so 'watchlist pre-warning' matches your chart's 'Watchlist'
+    watchlist_df['Category'] = watchlist_df['Category'].replace('watchlist pre-warning', 'Watchlist')
+
+    # 3. Sort them from lowest to highest prediction score
+    watchlist_df = watchlist_df.sort_values(by='Predicted_DTP3', ascending=True)
+
+    # 4. Display the complete table beautifully in Streamlit
+    st.write("### 📋 Global Risk Assessment: The 15 Watchlist Countries (2030)")
+    st.dataframe(
+        watchlist_df[['Country', 'Predicted_DTP3', 'Category']], 
+        hide_index=True,            # Removes backend index numbers (46, 133, 160)
+        use_container_width=True    # Stretches the table to fit the screen nicely
+    )
 with tab2:
     st.write("### Global Feature Importance (What the AI Looks For)")
     st.info("This chart displays how much weight the Neural Network assigns to each variable globally.")
