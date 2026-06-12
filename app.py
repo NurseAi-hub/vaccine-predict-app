@@ -205,7 +205,8 @@ st.set_page_config(page_title="Health AI - Vaccination Forecast", layout="wide")
 st.title("🌍 Early Warning System: Vaccination Coverage Predictor")
 st.subheader("Developed by: Health Data Scientist - Morocco 🇲🇦")
 st.info("""
-🔬 **What is this?** This platform uses **Advanced Machine Learning** to look at historic healthcare data and forecast DTP3 vaccine coverage for the year 2030. 
+🔬 **What is this?** This platform uses **Advanced Machine Learning** to look at historic healthcare data and forecast DTP3 vaccine coverage for the year 2030.
+
 💡 **Why it matters:** Instead of waiting for vaccination rates to drop, this AI-driven system acts as an **Early Warning Radar**—pointing global health organizations directly toward countries that will need supply-chain or financial support before the deadline.
 """)
 
