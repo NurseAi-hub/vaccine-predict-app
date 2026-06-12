@@ -1,34 +1,4 @@
-"""
-# 🌍 AI-Powered Early Warning System for Vaccination Coverage
 
-## 📌 Project Overview
-This project is a machine learning-based Early Warning System designed to predict the risk of DTP3 (Diphtheria, Tetanus, and Pertussis) vaccination dropouts across various countries by 2030. By leveraging global health data from UNICEF and advanced Neural Networks, this tool helps health organizations identify at-risk regions and optimize resource allocation.
-
-## 🎯 The Problem
-DTP3 coverage is globally recognized as the primary proxy indicator for the performance of a national immunization system. A significant drop between the first dose (DTP1) and the third dose (DTP3) indicates systemic failures in healthcare access. Identifying which countries will face critical dropouts by 2030 is crucial for proactive interventions.
-
-## 💡 The Solution & Methodology
-I developed a **Spatiotemporal Forecasting Model** using a multi-layer Neural Network to predict future coverage rates.
-
-### Tech Stack & Tools:
-* **Data Processing:** `Pandas`, `NumPy` (Handling UNICEF datasets and ISO geographical codes).
-* **Machine Learning:** `Scikit-Learn (MLPRegressor)` for deep learning predictive modeling.
-* **AI Explainability:** `SHAP` (SHapley Additive exPlanations) to break open the Neural Network's "black box" and understand feature importance.
-* **Interactive UI:** `Streamlit` to deploy the model as a user-friendly web application.
-
-## 🔍 Key Insights (SHAP Analysis)
-One of the most critical phases of this project was interpreting the Neural Network's logic using Game Theory (SHAP).
-* **The Dominant Factor:** The model revealed that historical **DTP1 Coverage** is the overwhelming driver of DTP3 dropout risk, completely overshadowing regional (`Region_Code`) or temporal (`Year`) factors.
-* **Strategic Recommendation:** Global health budgets should prioritize securing the initial dose (DTP1), as the AI proves it strongly guarantees the completion of the vaccination schedule.
-
-## 🚀 How to Run the App Locally
-Want to interact with the prediction model? You can run the web app on your local machine:
-
-1. Clone this repository.
-2. Install the required dependencies:
-   ```bash
-   pip install pandas scikit-learn streamlit shap
-"""
 import pandas as pd
 import numpy as np
 import shap
