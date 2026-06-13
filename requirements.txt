@@ -3,7 +3,7 @@ pandas
 numpy
 matplotlib==3.7.1
 scikit-learn
-#seaborn
+seaborn
 joblib
-#openpyxl
-#shap
+openpyxl
+shap
