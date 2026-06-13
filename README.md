@@ -2,7 +2,7 @@
 ![Project  dashboard](photo.png)
 
 ### Developed by: Health Data Scientist — Morocco 🇲🇦
-[![Streamlit App](https://static.streamlit.io/badge-svg.svg)](https://streamlit.io/)
+[![Streamlit App](https://static.streamlit.io/badge-svg.svg)](https://vaccine-predict-app-mqqxtthfp49bthkoarmubx.streamlit.app/)
 [![Python 3.9+](https://img.shields.shields.shields.shields.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 ---
