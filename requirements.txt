@@ -1,9 +1,9 @@
-streamlit
-pandas
-numpy
+numpy<2.0.0
+pandas>=2.0.0
 matplotlib==3.7.1
 scikit-learn
+shap==0.44.1
 seaborn
 joblib
 openpyxl
-shap
+streamlit
