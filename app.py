@@ -1,4 +1,4 @@
-
+import streamlit as st
 import pandas as pd
 import numpy as np
 import shap
@@ -7,7 +7,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
-import streamlit as st
+
 import joblib
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
