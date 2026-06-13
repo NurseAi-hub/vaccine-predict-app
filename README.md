@@ -3,7 +3,7 @@
 
 ### Developed by: Health Data Scientist — Morocco 🇲🇦
 
-[![Streamlit App](https://static.streamlit.io/badge-svg.svg)](https://vaccine-predict-app-mqqxtthfp49bthkoarmubx.streamlit.app/#early-warning-system-vaccination-coverage-predictor)
+[![Streamlit App](https://static.streamlit.io/badge-svg.svg)](https://vaccine-predict-app-mqqxtthfp49bthkoarmubx.streamlit.app/)
 
 [![Python 3.9+](https://img.shields.shields.shields.shields.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![GitHub Repository](https://img.shields.shields.shields.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/NurseAi-hub/vaccine-predict-app/blob/main/app.py)
