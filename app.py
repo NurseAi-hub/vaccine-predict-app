@@ -259,15 +259,15 @@ if st.sidebar.button("Run AI Prediction 🚀"):
     
    with col1:
         st.metric(label="Predicted DTP3 Coverage", value=f"{prediction:.2f}%")
-    with col2:
+   with col2:
         st.metric(label="Predicted Dropout Gap", value=f"{gap:.2f}%")
          
     
-    if prediction >= 80:
+   if prediction >= 80:
         st.success("✅ The predicted DTP3 coverage is within acceptable ranges.")
-    elif 50 <= prediction < 80:
+   elif 50 <= prediction < 80:
         st.warning("⚠️ Warning: Moderate coverage. Risk of under-vaccination detected.")
-    else:
+   else:
         st.error("🚨 Critical: Very low DTP3 coverage predicted! Immediate intervention required.")
 
 # ==========================================
