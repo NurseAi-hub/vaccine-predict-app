@@ -257,16 +257,18 @@ if st.sidebar.button("Run AI Prediction 🚀"):
 
     st.success("✅ AI Analysis Complete!")
     
-    col1, col2 = st.columns(2)
-    with col1:
+   with col1:
         st.metric(label="Predicted DTP3 Coverage", value=f"{prediction:.2f}%")
     with col2:
-        st.metric(label="Predicted Dropout Gap", value=f"{gap:.2f}%", delta=f"-{gap:.2f}%")
-        
-    if gap <= 10:
-        st.info("✅ The predicted dropout gap is within acceptable epidemiological ranges.")
+        st.metric(label="Predicted Dropout Gap", value=f"{gap:.2f}%")
+         
+    
+    if prediction >= 80:
+        st.success("✅ The predicted DTP3 coverage is within acceptable ranges.")
+    elif 50 <= prediction < 80:
+        st.warning("⚠️ Warning: Moderate coverage. Risk of under-vaccination detected.")
     else:
-        st.warning("⚠️ Warning: High dropout gap predicted! Risk of under-vaccination detected.")
+        st.error("🚨 Critical: Very low DTP3 coverage predicted! Immediate intervention required.")
 
 # ==========================================
 # 5. GLOBAL RISK WATCHLIST VIEW FOR JUDGES
